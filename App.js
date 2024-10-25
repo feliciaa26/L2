@@ -1,20 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import {Text, StatusBar, ScrollView} from 'react-native';
+import Movie from './components/Movie.js';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const AllMovies = () => {
+    return (
+        <ScrollView>
+            <Movie title="Doctor Sleep" year={2019} icon="infocirlce" poster={require('./img/doctor-sleep.jpg')}/>
+            <Movie title="Midway" year={2020} icon="infocirlce" poster={require('./img/midway.jpg')}/>
+            <Movie title="Boat" year={2021} icon="infocirlce" poster={require('./img/flipper.jpg')}/>
+        </ScrollView>
+    );
+};
+export default AllMovies;
